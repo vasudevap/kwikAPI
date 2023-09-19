@@ -20,12 +20,21 @@ Product.init(
       allowNull: false
     },
     price: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
       allowNull: false,
+      validate: {
+        // check that price is a +ve decimal value
+        is: /^-?(\d+\.?\d*|\.\d+)$/
+      }
     },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      validate: {
+        // check that price is a + numeric value
+        is: /,^-?\d+$/
+      },
+      defaultValue: 10,
     },
     category_id: {
       type: DataTypes.INTEGER,
@@ -36,6 +45,7 @@ Product.init(
       },
       allowNull: false,
     },
+  },
   {
     sequelize,
     timestamps: false,
