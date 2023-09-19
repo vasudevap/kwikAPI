@@ -1,0 +1,6 @@
+node_modules
+.env
+.DS_Store
+Assets
+kwikAPI.code.workspace
+ProjREADME.md
