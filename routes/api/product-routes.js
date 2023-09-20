@@ -7,6 +7,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     // find all products
+    // console.log(req.body);
     const productsData = await Product.findAll({
       // include its associated Category
       include: [
@@ -22,6 +23,7 @@ router.get('/', async (req, res) => {
           as: 'Tag'
         }],
     });
+    console.log(productsData)
     res.status(200).json(productsData);
   } catch (err) {
     res.status(500).json(err);
