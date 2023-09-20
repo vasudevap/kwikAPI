@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Product,
-          as: 'Product'
+          // as: 'Product'
         }],
     });
     res.status(200).json(categoriesData);
@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: Product,
-          as: 'Product'
+          // as: 'Product'
         }],
     });
     res.status(200).json(categoryData);
