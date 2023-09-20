@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
     tag_name: 'rock music',
   }
 */
-  Product.create(req.body)
+  Tag.create(req.body)
     .then((tag) => {
       // return the tag
       res.status(200).json(tag);
