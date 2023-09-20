@@ -7,20 +7,16 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     // find all products
-    console.log("Hello");
     const productsData = await Product.findAll({
-      // include its associated Category
       include: [
         {
+          // include its associated Category
           model: Category,
-          // as: 'Category',
-          // model: Tag,
-          // through: ProductTag,
-          // as: 'Tag'
+          // include its associated Tag
+          model: Tag,
+          through: ProductTag,
         }],
-      // include its associated Tag
     });
-    console.log("bye");
     res.status(200).json(productsData);
   } catch (err) {
     console.log(err);
@@ -33,18 +29,13 @@ router.get('/:id', async (req, res) => {
   try {
     // find products by id
     const productsData = await Product.findByPk(req.params.id, {
-      // include its associated Category
       include: [
         {
+          // include its associated Category
           model: Category,
-          as: 'Category'
-        }],
-      // include its associated Tag
-      include: [
-        {
+          // include its associated Tag
           model: Tag,
           through: ProductTag,
-          as: 'Tag'
         }],
     });
     res.status(200).json(productsData);
@@ -88,7 +79,8 @@ router.post('/', async (req, res) => {
 });
 
 // update product
-router.put('/:id', (req, res) => {
+router.put('/:id'
+, (req, res) => {
   // update product data
   Product.update(req.body, {
     where: {
@@ -131,7 +123,7 @@ router.put('/:id', (req, res) => {
       res.status(400).json(err);
     });
 });
-
+// delete product
 router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
   try {
