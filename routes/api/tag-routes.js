@@ -18,7 +18,6 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-  // be sure to include its associated Product data
 });
 // find a single tag by its `id`
 router.get('/:id', async (req, res) => {
@@ -47,7 +46,7 @@ router.post('/', async (req, res) => {
     tag_name: 'rock music',
   }
 */
-  Product.create(req.body)
+  Tag.create(req.body)
     .then((tag) => {
       // return the tag
       res.status(200).json(tag);
