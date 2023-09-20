@@ -26,7 +26,6 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-  // include its associated Category and Tag data
 });
 
 // get one product
