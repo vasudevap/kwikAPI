@@ -22,18 +22,18 @@ Product.init(
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
-      validate: {
-        // check that price is a +ve decimal value
-        is: /^-?(\d+\.?\d*|\.\d+)$/
-      }
+      // validate: {
+      //   // check that price is a +ve decimal value
+      //   is: /^-?(\d+\.?\d*|\.\d+)$/
+      // }
     },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        // check that price is a + numeric value
-        is: /,^-?\d+$/
-      },
+      // validate: {
+      //   // check that price is a + numeric value
+      //   is: /,^-?\d+$/
+      // },
       defaultValue: 10,
     },
     category_id: {
@@ -43,7 +43,7 @@ Product.init(
         key: 'id',
         unique: false
       },
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
