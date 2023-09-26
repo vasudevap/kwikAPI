@@ -28,7 +28,12 @@ The [source repository on GitHub](https://github.com/vasudevap/kwikAPI.git) cont
 5. that's it!
 
 # WALKTHROUGH
-
+The following show how the data is formatted when any of the [HTTP Methods](#http-methods) are accessed via any of the available [routes](#routes).
+## Using `GET` to retrieve all products, categories, or tags
+## Using `GET` to retrieve a single product, category, or tag
+## Using `POST` to create a single product, category, or tag
+## Using `PUT` to update a single product, category, or tag
+## Using `DELETE` to update a single product, category, or tag
 
 # USAGE
 To use this backend API application, simply connect any front-end that can perform a `fetch` to any of the routes listed [below](#routes)
