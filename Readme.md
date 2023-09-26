@@ -30,7 +30,11 @@ The [source repository on GitHub](https://github.com/vasudevap/kwikAPI.git) cont
 # WALKTHROUGH
 The following show how the data is formatted when any of the [HTTP Methods](#http-methods) are accessed via any of the available [routes](#routes).
 ## Using `GET` to retrieve all products, categories, or tags
+[Click here](./demo/1_GETRoutes.mp4) for a video walkthrough.
+
 ## Using `GET` to retrieve a single product, category, or tag
+[Click here](./demo/1_GETRoutes.mp4) for a video walkthrough.
+
 ## Using `POST` to create a single product, category, or tag
 ## Using `PUT` to update a single product, category, or tag
 ## Using `DELETE` to update a single product, category, or tag
