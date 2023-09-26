@@ -40,11 +40,11 @@ router.get('/:id', async (req, res) => {
 // create new category
 router.post('/', async (req, res) => {
 
-/* req.body should look like this...
-  {
-    category_name: 'Shirts',
-  }
-*/
+  /* req.body should look like this...
+    {
+      category_name: 'Shirts',
+    }
+  */
   Category.create(req.body)
     .then((category) => {
       // return the category
@@ -62,7 +62,7 @@ router.put('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-  })    
+  })
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);
