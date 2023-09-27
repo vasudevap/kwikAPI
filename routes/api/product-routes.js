@@ -58,8 +58,9 @@ router.post('/', async (req, res) => {
     const productCreated = await Product.create(req.body);
     if (productCreated) {
       res.status(200).json(productCreated);
+    } else {
+      res.status(400).json(productCreated);
     }
-    res.status(400).json(productCreated);
   }
   catch (err) {
     console.log(err);
@@ -68,7 +69,7 @@ router.post('/', async (req, res) => {
 });
 
 // update product
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   /* req.body should look like this...
       {
         product_name: "Basketball",
@@ -77,16 +78,22 @@ router.put('/:id', (req, res) => {
         category_id: 4
       }
     */
-  Product.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
-  .catch((err) => {
-    // console.log(err);
-    res.status(400).json(err);
-  });
+  try {
+    const updatedProduct = await Product.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    });
 
+    if (updatedProduct) {
+      res.status(200).json(updatedProduct);
+    } else {
+      res.status(400).json(updatedProduct);
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
 });
 
 // delete product
