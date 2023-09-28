@@ -10,7 +10,7 @@ You got products?  We got API! The perfect API that provides you with a foundati
 
 1. [Source](#source)
 2. [Installation](#installation)
-3. [Walkthrough](#walkthrough)
+3. [Walkthrough](#walkthroughs)
 4. [Usage](#usage)
 3. [Contributing](#contributing)
 4. [Tests](#tests)
@@ -27,20 +27,50 @@ The [source repository on GitHub](https://github.com/vasudevap/kwikAPI.git) cont
 4. run `npm start` to start the webserver on `port 3001`
 5. that's it!
 
-# WALKTHROUGH
-The following show how the data is formatted when any of the [HTTP Methods](#http-methods) are accessed via any of the available [routes](#routes).
-## Using `GET` to retrieve all products, categories, or tags
-[Click here](./demo/1_GETRoutes.mp4) for a video walkthrough.
+# WALKTHROUGHS
+The following videos walkthroughs demonstrate the functionality of the e-commerce back end:
 
-## Using `GET` to retrieve a single product, category, or tag
-[Click here](./demo/1_GETRoutes.mp4) for a video walkthrough.
+## 1. Database - Create the Schema
+The database ecommerce_db is created by logging into the mysql application and running the file `/db/schema.sql` at the prompt - click [here to view the video walkthrough](https://drive.google.com/file/d/1iMq22oLPjY-rpL6u0ZLwjbbyPnfWystq/view?usp=drive_link).  
 
-## Using `POST` to create a single product, category, or tag
-## Using `PUT` to update a single product, category, or tag
-## Using `DELETE` to update a single product, category, or tag
+## 2. Database - Seed the Database
+After the database is created, the tables are created and the seed data is loaded.  The files to seed the database are provided at `/seeds/index.js`.  This process is demonstrated in a [video walkthrough by clicking here](https://drive.google.com/file/d/1fhPuzTlf7h8evgzwCdsrMZh16_2toMXY/view?usp=drive_link).
+
+## 3. Server - Start
+To start the server after the database is populated with data, run `node server.js` on the terminal, or `npm start` - watch the [video walkthrough by clicking here](https://drive.google.com/file/d/1zUNnHrzGMZFNf59r5YNQnrTeyUSSA9UP/view?usp=drive_link).
+
+## 4. Using the App - Products Routes
+### GET (all) and DELETE
+To view the functionality of GET (all) and DELETE (one by id) Http methods for the [Products routes, click here](https://drive.google.com/file/d/1Pdlk1NCVRhx5Zvlgp_G87Iyjx5q6lCR9/view?usp=drive_link).
+### GET (one) and PUT
+To view the functionality of GET (one by id) and PUT (one by id) Http methods for [Products routes, click here](https://drive.google.com/file/d/1cqN6CXD5BTG08rDpdn5MTI4__cO3Cbqv/view?usp=drive_link)
+### POST
+To view the functionality of POST (one by id) HTTP method for [Products routes, click here](https://drive.google.com/file/d/1rFuQYaiHp8bfBWz6ianLWfwds6ADHEuR/view?usp=drive_link)
+
+## 5. Using the App - Categories Routes
+### GET (all) and DELETE
+To view the functionality of GET (all) and DELETE (one by id) Http methods for the [Categories routes, click here](https://drive.google.com/file/d/1bT11XiQB1OXxHMgBLfUrXLd_UdIlvI3j/view?usp=drive_link).
+### GET (one) and PUT
+To view the functionality of GET (one by id) and PUT (one by id) Http methods for [Categories routes, click here](https://drive.google.com/file/d/19FiAEydd08Vo6G5NxiwoPHIo-lUKYQsu/view?usp=sharing)
+### POST
+To view the functionality of POST (one by id) HTTP method for [Categories routes, click here](https://drive.google.com/file/d/1VMoe-4JMSlpyjqL_RR4H-uWXmuCjdv-_/view?usp=drive_link)
+
+## 6. Using the App - Tags Routes
+### GET (all) and DELETE
+To view the functionality of GET (all) and DELETE (one by id) Http methods for the [Tags routes, click here](https://drive.google.com/file/d/1ht9LhGIj10UDK2OsZyNXKzt5opoQnQ4o/view?usp=drive_link).
+### GET (one) and PUT
+To view the functionality of GET (one by id) and PUT (one by id) Http methods for [Tags routes, click here](https://drive.google.com/file/d/1g9lB3-QowHNpMaY37xZvcWu_t8F0_xYi/view?usp=drive_link)
+### POST
+To view the functionality of POST (one by id) HTTP method for [Tags routes, click here](https://drive.google.com/file/d/1v3RGhoMMy4BEVcYB1T7MgZyIWy8cNLeN/view?usp=drive_link)
 
 # USAGE
-To use this backend API application, simply connect any front-end that can perform a `fetch` to any of the routes listed [below](#routes)
+To use this backend API application, simply connect any front-end that can perform a `fetch` to any of the routes listed [below](#routes).  The functionality of the routes are demonstrated in the [walthrough section](#walkthroughs) of this readme.
+
+## Database
+To create the database view the [video walkthrough provided above](#1-database---create-the-schema).  The database can then be seeded following the steps outlined in the [video walkthrough here](#2-database---seed-the-database).
+
+## Server
+To start the server on the nodeJS runtime environment, follow the steps in [this walkthrough section](#3-server---start).
 
 ## HTTP Methods
 Following routes can be accessed via the following HTTP methods:
@@ -50,33 +80,18 @@ Following routes can be accessed via the following HTTP methods:
 4. `DELETE`
 
 ### Routes
-- `/api/products`
-for products and associated tags and categories
-
-- `/api/products/:id`
-for products by their ID and associated tags and categories
-
-- `/api/tags`
-for tags and associated products
-
-- `/api/tags/:id`
-for tags and associated products by tag ID
-
-- `/api/categories`
-for categories and related products
-
-- `/api/categroies/:id`
-for categories and products for a single category with supplied ID
-
-See mockup to see the results displayed in insomnia.
+- `/api/products` for products and associated tags and categories - [walkthrough link](#4-using-the-app---products-routes)
+- `/api/products/:id` for products by their ID and associated tags and categories - [walkthrough link](#4-using-the-app---products-routes)
+- `/api/tags` for tags and associated products - [walkthrough link](#6-using-the-app---tags-routes)
+- `/api/tags/:id` for tags and associated products by tag ID - [walkthrough link](#6-using-the-app---tags-routes)
+- `/api/categories` for categories and related products - [walkthrough link](#5-using-the-app---categories-routes)
+- `/api/categroies/:id` for categories and products for a single category with supplied ID - [walkthrough link](#5-using-the-app---categories-routes)
 
 # CONTRIBUTING
 If you're looking to help build a world free of heavy APIs, join me by sending your carrier pigeons to my [GitHub](https://github.com/vasudevap)
 
-
 # TESTS
 Test files for jest can be made available.
-
 
 # LICENSE
 [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)
